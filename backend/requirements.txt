@@ -1,0 +1,28 @@
+# ── Core Framework ───────────────────────────────────
+fastapi>=0.104.0
+uvicorn[standard]>=0.24.0
+pydantic>=2.5.0
+pydantic-settings>=2.1.0
+
+# ── Database ─────────────────────────────────────────
+motor>=3.3.0
+
+# ── Authentication ───────────────────────────────────
+python-jose[cryptography]>=3.3.0
+passlib[bcrypt]>=1.7.4
+
+# ── WebSocket ────────────────────────────────────────
+websockets>=12.0
+
+# ── LangChain / LangGraph ────────────────────────────
+langchain-core>=0.3.0
+langchain-groq>=0.2.0
+langgraph>=0.2.0
+
+# ── Notifications ────────────────────────────────────
+aiosmtplib>=3.0.0
+
+# ── Utilities ────────────────────────────────────────
+python-dotenv>=1.0.0
+python-multipart>=0.0.6
+httpx>=0.25.0

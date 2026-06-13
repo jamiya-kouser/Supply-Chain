@@ -1,0 +1,452 @@
+{
+  "drivers": [
+    {
+      "driver_id": "D001",
+      "name": "Rajesh Kumar",
+      "phone": "+919876543210",
+      "email": "rajesh.kumar@logistics.com",
+      "vehicle_number": "KA01AB1234",
+      "vehicle_type": "truck",
+      "license_number": "DL0120230001",
+      "status": "active",
+      "current_location": {
+        "latitude": 15.3050,
+        "longitude": 75.4250,
+        "address": "Bangalore, Karnataka, India"
+      },
+      "total_deliveries": 145,
+      "rating": 4.8,
+      "documents_verified": true,
+      "assigned_warehouse": "WH001"
+    },
+    {
+      "driver_id": "D002",
+      "name": "Priya Singh",
+      "phone": "+919876543211",
+      "email": "priya.singh@logistics.com",
+      "vehicle_number": "KA02CD5678",
+      "vehicle_type": "van",
+      "license_number": "DL0120230002",
+      "status": "active",
+      "current_location": {
+        "latitude": 13.0827,
+        "longitude": 80.2707,
+        "address": "Chennai, Tamil Nadu, India"
+      },
+      "total_deliveries": 89,
+      "rating": 4.9,
+      "documents_verified": true,
+      "assigned_warehouse": "WH002"
+    },
+    {
+      "driver_id": "D003",
+      "name": "Arjun Patel",
+      "phone": "+919876543212",
+      "email": "arjun.patel@logistics.com",
+      "vehicle_number": "GJ03EF9012",
+      "vehicle_type": "truck",
+      "license_number": "DL0120230003",
+      "status": "on_break",
+      "current_location": {
+        "latitude": 23.0225,
+        "longitude": 72.5714,
+        "address": "Ahmedabad, Gujarat, India"
+      },
+      "total_deliveries": 67,
+      "rating": 4.5,
+      "documents_verified": true,
+      "assigned_warehouse": "WH003"
+    }
+  ],
+
+  "shipments": [
+    {
+      "shipment_id": "SHIP001",
+      "order_id": "ORD001",
+      "status": "in_transit",
+      "carrier": {
+        "driver_id": "D001",
+        "driver_name": "Rajesh Kumar",
+        "vehicle_number": "KA01AB1234",
+        "phone": "+919876543210"
+      },
+      "origin": {
+        "warehouse_id": "WH001",
+        "address": "Bangalore Central Warehouse, Bangalore",
+        "contact": "warehouse.mgr@company.com"
+      },
+      "destination": {
+        "customer_id": "CUST001",
+        "customer_name": "ABC Trading Co.",
+        "address": "123 Market Street, Bangalore",
+        "contact_phone": "+919988776655",
+        "expected_arrival": "2026-03-14T15:30:00Z"
+      },
+      "items": [
+        {
+          "sku": "SKU001",
+          "name": "Ceramic Tiles (Box of 10)",
+          "quantity": 50,
+          "weight_kg": 2.5,
+          "dimensions": "30x30x5 cm"
+        }
+      ],
+      "total_weight_kg": 125,
+      "total_value_inr": 12500,
+      "created_at": "2026-03-13T08:00:00Z",
+      "updated_at": "2026-03-13T10:30:00Z"
+    },
+    {
+      "shipment_id": "SHIP002",
+      "order_id": "ORD002",
+      "status": "pending",
+      "carrier": {
+        "driver_id": "D002",
+        "driver_name": "Priya Singh",
+        "vehicle_number": "KA02CD5678",
+        "phone": "+919876543211"
+      },
+      "origin": {
+        "warehouse_id": "WH002",
+        "address": "Chennai Central Warehouse, Chennai",
+        "contact": "warehouse.mgr@company.com"
+      },
+      "destination": {
+        "customer_id": "CUST002",
+        "customer_name": "XYZ Retail Ltd.",
+        "address": "456 Shopping Mall, Chennai",
+        "contact_phone": "+919988776656",
+        "expected_arrival": "2026-03-15T14:00:00Z"
+      },
+      "items": [
+        {
+          "sku": "SKU002",
+          "name": "Marble Slabs",
+          "quantity": 25,
+          "weight_kg": 5.0,
+          "dimensions": "50x50x3 cm"
+        }
+      ],
+      "total_weight_kg": 125,
+      "total_value_inr": 18750,
+      "created_at": "2026-03-13T09:00:00Z",
+      "updated_at": "2026-03-13T11:00:00Z"
+    },
+    {
+      "shipment_id": "SHIP003",
+      "order_id": "ORD003",
+      "status": "delivered",
+      "carrier": {
+        "driver_id": "D001",
+        "driver_name": "Rajesh Kumar",
+        "vehicle_number": "KA01AB1234",
+        "phone": "+919876543210"
+      },
+      "origin": {
+        "warehouse_id": "WH001",
+        "address": "Bangalore Central Warehouse, Bangalore",
+        "contact": "warehouse.mgr@company.com"
+      },
+      "destination": {
+        "customer_id": "CUST003",
+        "customer_name": "PQR Constructions",
+        "address": "789 Industrial Area, Bangalore",
+        "contact_phone": "+919988776657",
+        "expected_arrival": "2026-03-12T16:00:00Z"
+      },
+      "items": [
+        {
+          "sku": "SKU003",
+          "name": "Iron Rods (Bundle)",
+          "quantity": 100,
+          "weight_kg": 8.0,
+          "dimensions": "200x10x10 cm"
+        }
+      ],
+      "total_weight_kg": 800,
+      "total_value_inr": 24000,
+      "created_at": "2026-03-11T08:00:00Z",
+      "delivered_at": "2026-03-12T17:30:00Z",
+      "delivered_by": "D001"
+    }
+  ],
+
+  "orders": [
+    {
+      "order_id": "ORD001",
+      "supplier_id": "SUP001",
+      "status": "confirmed",
+      "items": [
+        {
+          "sku": "SKU001",
+          "name": "Ceramic Tiles (Box of 10)",
+          "quantity": 50,
+          "unit_price": 250,
+          "total": 12500
+        }
+      ],
+      "delivery_warehouse": "WH001",
+      "requested_delivery_date": "2026-03-14",
+      "notes": "Handle with care, fragile items",
+      "total_amount_inr": 12500,
+      "created_at": "2026-03-13T08:00:00Z"
+    },
+    {
+      "order_id": "ORD002",
+      "supplier_id": "SUP002",
+      "status": "processing",
+      "items": [
+        {
+          "sku": "SKU002",
+          "name": "Marble Slabs",
+          "quantity": 25,
+          "unit_price": 750,
+          "total": 18750
+        }
+      ],
+      "delivery_warehouse": "WH002",
+      "requested_delivery_date": "2026-03-15",
+      "notes": "Requires specialized handling for stone",
+      "total_amount_inr": 18750,
+      "created_at": "2026-03-13T09:00:00Z"
+    },
+    {
+      "order_id": "ORD003",
+      "supplier_id": "SUP001",
+      "status": "delivered",
+      "items": [
+        {
+          "sku": "SKU003",
+          "name": "Iron Rods (Bundle)",
+          "quantity": 100,
+          "unit_price": 240,
+          "total": 24000
+        }
+      ],
+      "delivery_warehouse": "WH001",
+      "requested_delivery_date": "2026-03-12",
+      "notes": "Standard delivery",
+      "total_amount_inr": 24000,
+      "created_at": "2026-03-11T08:00:00Z",
+      "delivered_at": "2026-03-12T17:30:00Z"
+    }
+  ],
+
+  "inventory": [
+    {
+      "sku": "SKU001",
+      "name": "Ceramic Tiles (Box of 10)",
+      "category": "construction_materials",
+      "description": "High-quality ceramic floor tiles",
+      "warehouse_locations": [
+        {
+          "warehouse_id": "WH001",
+          "quantity": 500,
+          "reorder_level": 100,
+          "last_updated": "2026-03-13T10:00:00Z"
+        },
+        {
+          "warehouse_id": "WH002",
+          "quantity": 300,
+          "reorder_level": 75,
+          "last_updated": "2026-03-13T10:00:00Z"
+        }
+      ],
+      "unit_price_inr": 250,
+      "supplier_id": "SUP001",
+      "total_quantity": 800
+    },
+    {
+      "sku": "SKU002",
+      "name": "Marble Slabs",
+      "category": "construction_materials",
+      "description": "Premium Italian marble slabs",
+      "warehouse_locations": [
+        {
+          "warehouse_id": "WH002",
+          "quantity": 150,
+          "reorder_level": 50,
+          "last_updated": "2026-03-13T10:00:00Z"
+        }
+      ],
+      "unit_price_inr": 750,
+      "supplier_id": "SUP002",
+      "total_quantity": 150
+    },
+    {
+      "sku": "SKU003",
+      "name": "Iron Rods (Bundle)",
+      "category": "metal_supplies",
+      "description": "TMT Iron rods 12mm diameter",
+      "warehouse_locations": [
+        {
+          "warehouse_id": "WH001",
+          "quantity": 200,
+          "reorder_level": 50,
+          "last_updated": "2026-03-13T10:00:00Z"
+        },
+        {
+          "warehouse_id": "WH003",
+          "quantity": 45,
+          "reorder_level": 100,
+          "last_updated": "2026-03-13T10:00:00Z"
+        }
+      ],
+      "unit_price_inr": 240,
+      "supplier_id": "SUP001",
+      "total_quantity": 245
+    }
+  ],
+
+  "delivery_schedules": [
+    {
+      "schedule_id": "SCHED001",
+      "warehouse_id": "WH001",
+      "shipment_id": "SHIP001",
+      "scheduled_date": "2026-03-14",
+      "scheduled_time": "15:30",
+      "duration_hours": 2,
+      "status": "confirmed",
+      "notes": "Priority delivery",
+      "created_at": "2026-03-13T08:00:00Z"
+    },
+    {
+      "schedule_id": "SCHED002",
+      "warehouse_id": "WH002",
+      "shipment_id": "SHIP002",
+      "scheduled_date": "2026-03-15",
+      "scheduled_time": "14:00",
+      "duration_hours": 1.5,
+      "status": "pending",
+      "notes": "Standard delivery",
+      "created_at": "2026-03-13T09:00:00Z"
+    },
+    {
+      "schedule_id": "SCHED003",
+      "warehouse_id": "WH001",
+      "shipment_id": "SHIP003",
+      "scheduled_date": "2026-03-12",
+      "scheduled_time": "16:00",
+      "duration_hours": 2,
+      "status": "completed",
+      "notes": "Delivered successfully",
+      "created_at": "2026-03-11T08:00:00Z",
+      "completed_at": "2026-03-12T17:30:00Z"
+    }
+  ],
+
+  "exceptions": [
+    {
+      "exception_id": "EXC001",
+      "shipment_id": "SHIP001",
+      "exception_type": "delay",
+      "severity": "medium",
+      "description": "Traffic congestion on route, estimated delay 30 minutes",
+      "status": "open",
+      "reported_by": "D001",
+      "reported_at": "2026-03-13T14:00:00Z"
+    },
+    {
+      "exception_id": "EXC002",
+      "shipment_id": "SHIP002",
+      "exception_type": "damage",
+      "severity": "high",
+      "description": "Package damaged during loading, contents compromised",
+      "status": "open",
+      "reported_by": "WAREHOUSE",
+      "reported_at": "2026-03-13T10:30:00Z",
+      "resolution": "Repack items and reschedule delivery"
+    },
+    {
+      "exception_id": "EXC003",
+      "shipment_id": "SHIP003",
+      "exception_type": "customer_unavailable",
+      "severity": "low",
+      "description": "Customer not available at delivery location",
+      "status": "resolved",
+      "reported_by": "D001",
+      "reported_at": "2026-03-12T16:30:00Z",
+      "resolution": "Rescheduled for next day, customer called",
+      "resolved_by": "SYSTEM",
+      "resolved_at": "2026-03-12T17:00:00Z"
+    }
+  ],
+
+  "vapi_webhook_payloads": {
+    "verify_driver_identity": {
+      "message": {
+        "type": "function-call",
+        "functionCall": {
+          "name": "verify_driver_identity",
+          "parameters": {
+            "driver_id": "D001"
+          }
+        }
+      }
+    },
+    "check_active_shipments": {
+      "message": {
+        "type": "function-call",
+        "functionCall": {
+          "name": "check_active_shipments",
+          "parameters": {
+            "driver_id": "D001"
+          }
+        }
+      }
+    },
+    "get_shipment_status": {
+      "message": {
+        "type": "function-call",
+        "functionCall": {
+          "name": "get_shipment_status",
+          "parameters": {
+            "shipment_id": "SHIP001"
+          }
+        }
+      }
+    },
+    "report_exception": {
+      "message": {
+        "type": "function-call",
+        "functionCall": {
+          "name": "report_delivery_exception",
+          "parameters": {
+            "shipment_id": "SHIP001",
+            "exception_type": "delay",
+            "description": "Heavy traffic on route",
+            "severity": "medium"
+          }
+        }
+      }
+    },
+    "update_shipment_status": {
+      "message": {
+        "type": "function-call",
+        "functionCall": {
+          "name": "update_shipment_status",
+          "parameters": {
+            "shipment_id": "SHIP001",
+            "status": "delivered",
+            "received_by": "Customer signature"
+          }
+        }
+      }
+    },
+    "recalculate_eta": {
+      "message": {
+        "type": "function-call",
+        "functionCall": {
+          "name": "calculate_dynamic_eta",
+          "parameters": {
+            "shipment_id": "SHIP001",
+            "current_location": {
+              "latitude": 15.3050,
+              "longitude": 75.4250
+            }
+          }
+        }
+      }
+    }
+  }
+}
